@@ -1,57 +1,30 @@
-import React from 'react';
-import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import React, { useEffect, useState, useRef } from 'react';
+import { Text, View, StyleSheet, Animated, Button } from 'react-native';
+import Constants from 'expo-constants';
+
 
 const Load = () => { //Создаем переменную которая будет экспортироваться и что-то отрисовывать
-    return (
-      <View style={styles.container}>
-        <Text style={[styles.text, {marginTop: 70}]}>Звёздный интеллект</Text>                    
+  return (
+    <View style={[styles.container, {
+      // Try setting `flexDirection` to `"row"`.
+      flexDirection: "column"
+    }]}>
+      <View style={{ flex: 2, backgroundColor: "red" }} />
+      <View style={{ flex: 1,flexDirection: "column", justifyContent: "center", alignItems:"center", backgroundColor: "green" }} >
+        <View style={{width:"80%", height:"10%", flexDirection:"row", alignItems:"center", backgroundColor:"black"}}/>
+        <Text style={{fontSize:30, fontWeight:"bold", fontStyle:'italic'}}>Загрузка...</Text>
       </View>
-    )
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'column',
-      backgroundColor: '#fff',
-    },
-  
-    text: {
-      color: '#000',
-      fontSize: 26
-    },
-  
-    btns: {
-      flex: 1,
-      //backgroundColor: 'red',
-      alignItems: 'center',
-      width: '100%'
-      
-    },
-  
-    btnCont: {
-      flex: 1,
-      flexDirection: 'column',
-      //backgroundColor: 'blue',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  
-    abc: {
-      flex: 2,
-      //backgroundColor: 'yellow',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }
-  
-  });
+  container: {
+    flex: 1
+  },
+  text:{
+    fontSize:30,
+  }
+});
 
   export default Load; //Экспортируем нужную переменную

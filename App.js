@@ -9,9 +9,11 @@ import {
   View,
 } from 'react-native';
 import { MicButton } from './src/components/MicButton';
+import MainStack from './navigation'
+import Navigate from './navigation';
 
-const App = () => {
 
+const App = () => {  
   return (
     <View style={styles.container}>
 
@@ -23,7 +25,7 @@ const App = () => {
 
         <View style={[styles.btns, {justifyContent: 'flex-start',}]}>
           <View style={{ width: "30%"}}>
-            <Button title="Играть" />
+            <Button title="Играть"  onPress={loadScene}/>
           </View>
           
         </View>
