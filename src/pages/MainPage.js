@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, Text } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, BackHandler } from 'react-native';
 import MyButton from '../components/MyButton';
 
 const Main = ({navigation}) => {  //Создаем переменную которая будет экспортироваться и что-то отрисовывать
@@ -30,7 +30,9 @@ const Main = ({navigation}) => {  //Создаем переменную кото
 
         <View style={[styles.btns, {justifyContent: 'flex-end',}]}>
           <View style={{ width: "90%",  alignItems: 'center', justifyContent: 'center'}}>
-            <MyButton h="80%" w="60%" srcImg={exit}></MyButton>
+            <MyButton h="80%" w="60%" srcImg={exit} func={() => {
+              BackHandler.exitApp()
+            }}></MyButton>
           </View>       
         </View>
 
