@@ -20,8 +20,8 @@ const Main = ({navigation}) => {  //Создаем переменную кото
       <View style={styles.btnCont}>
 
         <View style={[styles.btns, {justifyContent: 'flex-start',}]}>
-          <View style={{ width: "100%", alignItems: 'center', justifyContent: 'center'}}>
-            <MyButton h="80%" w="50%" srcImg={play} func ={() => {
+          <View style={{ width: "90%", alignItems: 'center', justifyContent: 'center'}}>
+            <MyButton h="80%" w="60%" srcImg={play} func ={() => {
                 navigation.navigate('First')
             }}></MyButton>
           </View>
@@ -29,8 +29,8 @@ const Main = ({navigation}) => {  //Создаем переменную кото
         </View>
 
         <View style={[styles.btns, {justifyContent: 'flex-end',}]}>
-          <View style={{ width: "100%",  alignItems: 'center', justifyContent: 'center'}}>
-            <MyButton h="80%" w="50%" srcImg={exit}></MyButton>
+          <View style={{ width: "90%",  alignItems: 'center', justifyContent: 'center'}}>
+            <MyButton h="80%" w="60%" srcImg={exit}></MyButton>
           </View>       
         </View>
 
