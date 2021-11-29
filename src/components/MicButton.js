@@ -2,7 +2,6 @@
 
 import React from "react";
 import Voice from 'react-native-voice'
-import { Button } from "react-native";
 
 export const MicButton = () => {
 
@@ -15,6 +14,7 @@ export const MicButton = () => {
       }
 
     return (
-        <Button title="Say something" color='red' onPress = {ListenVoice}/>
+        //<Button title="Say something" color='red' onPress = {ListenVoice}/>
+        ListenVoice()
     )
 }

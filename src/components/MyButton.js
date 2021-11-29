@@ -1,11 +1,29 @@
 import React from 'react';
-import {
-  TouchableOpacity
-} from 'react-native';
+import PropTypes from 'prop-types'
+import { Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 
-const MyButton = () => {
+const MyButton = ({ text="", h, w, srcImg, func=()=>{} }) => {
+
     return (
-<TouchableOpacity style={{ height:"100%", width:"100%" }}/>
-);}
+      <View style={{height: h, width: w}}>
+        <TouchableOpacity style={{ height: '100%', width: '100%'}} onPress={func}>
+          <ImageBackground source={srcImg} style={{flex: 1}}>
 
-export default MyButton;
+            <Text>{text}</Text>
+
+          </ImageBackground>       
+        </TouchableOpacity>
+      </View>
+    )
+}
+
+MyButton.PropTypes = {
+  text: PropTypes.string,
+  h: PropTypes.number,
+  w: PropTypes.number,
+  srcImg: PropTypes.object,
+  func: PropTypes.func
+
+}
+
+export default MyButton

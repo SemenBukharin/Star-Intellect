@@ -1,40 +1,45 @@
 import React from 'react';
-import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity
-} from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import MyButton from '../components/MyButton';
+import { MicButton } from '../components/MicButton';
 
 const First = () => {
+
+  const mic = require('../../src/images/FirstScene/micOff.png')
+
   return (
-    <View style={[styles.container, {
-      flexDirection: "column"
-    }]}>
-      <View style={{ flex: 7, backgroundColor: "red",flexDirection: "row-reverse" }}>
-          <View style={{height:"10%", width:"40%", backgroundColor:"blue"}}>
-          <MyButton style={{backgroundColor:"black"}}/>
+    <View style={[styles.container, {flexDirection: "column"}]}>
+      {/* ПОМЕНЯТЬ БЭКГРАУНД!!! */}
+      <ImageBackground source={require('../../src/images/FirstScene/bg1.png')} style={{flex: 1}}> 
+
+      <View style={{ flex: 7,flexDirection: "row-reverse" }}>
+          <View style={{height:"10%", width:"40%", }}>
+            <MyButton style={{backgroundColor:"black"}}/>
           </View>
       </View>
-      <View style={{ flex: 1,flexDirection: "row", justifyContent: "space-between", alignItems:"flex-end", backgroundColor: "green" }} >        
+
+      <View style={{ flex: 1,flexDirection: "row", justifyContent: "space-between", alignItems:"flex-end",  }} >        
       
-      <View style={{height:"100%", width:"20%", backgroundColor:"blue"}}>   
-      <MyButton style={{backgroundColor:"black"}}>
-        <Text>sajdoahosf</Text>
-      </MyButton>
-      </View>
-      
-      <View style={{height:"100%", width:"20%", backgroundColor:"blue"}}/>
+        <View style={{height:"100%", width:"20%",}}>   
+
+        </View>
+        
+        <View style={{height:"100%", width:"20%",}}>
+          <View style={{ width: "100%",  alignItems: 'center', justifyContent: 'center'}}>
+          <MyButton h="80%" w="50%" srcImg={mic} func ={() => {
+                MicButton()
+            }}></MyButton>
+          </View>
+        </View>
 
       </View>
+
+      </ImageBackground>
+      
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1
