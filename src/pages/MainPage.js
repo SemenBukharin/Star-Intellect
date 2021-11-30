@@ -22,7 +22,7 @@ const Main = ({navigation}) => {  //Создаем переменную кото
         <View style={[styles.btns, {justifyContent: 'flex-start',}]}>
           <View style={{ width: "90%", alignItems: 'center', justifyContent: 'center'}}>
             <MyButton h="80%" w="60%" srcImg={play} func ={() => {
-                navigation.navigate('Second')
+                navigation.navigate('First')
             }}></MyButton>
           </View>
           
