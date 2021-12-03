@@ -3,9 +3,11 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import MyButton from '../components/MyButton';
 import { MicButton } from '../components/MicButton';
 
-const First = () => {
+
+const First = ({navigation}) => {
 
   const mic = require('../../src/images/FirstScene/micOff.png')
+  const Recognizer = require('../../src/components/ComRecognition')
 
   return (
     <View style={[styles.container, {flexDirection: "column"}]}>
@@ -26,8 +28,11 @@ const First = () => {
         
         <View style={{height:"100%", width:"20%",}}>
           <View style={{ width: "100%",  alignItems: 'center', justifyContent: 'center'}}>
-          <MyButton h="80%" w="50%" srcImg={mic} func ={() => {
-                MicButton()
+          <MyButton h="80%" w="50%" srcImg={mic} func ={ async() => {
+                let command = await MicButton()
+                alert(command)
+                navigation.navigate(`${Recognizer(command)}`)
+                
             }}></MyButton>
           </View>
         </View>

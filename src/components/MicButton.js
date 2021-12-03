@@ -3,18 +3,26 @@
 import React from "react";
 import Voice from 'react-native-voice'
 
-export const MicButton = () => {
+// export const MicButton = async () => {
 
-    function ListenVoice() {
-        Voice.start('ru-RU') //включаем микрофон и устанавливаем язык русский
-        Voice.onSpeechResults = (res) => { 
-          res = JSON.parse(JSON.stringify(res)).value[0] //вытаскиваем первый элемент из массива с вариантами распознанной фразы
-                  alert(res)
-        }
-      }
+//   Voice.start('ru-RU') //включаем микрофон и устанавливаем язык русский
 
-    return (
-        //<Button title="Say something" color='red' onPress = {ListenVoice}/>
-        ListenVoice()
-    )
-}
+//   Voice.onSpeechResults = async function(res) { 
+//     res = await JSON.parse(JSON.stringify(res)).value[0] //вытаскиваем первый элемент из массива с вариантами распознанной фразы
+//     //alert(res)
+//     return res
+//   }
+  
+//   return await Voice.onSpeechResults()
+// }
+
+
+export const MicButton = () => new Promise((resolve, reject) => {
+  Voice.start('ru-RU')
+  Voice.onSpeechResults = (res) => { 
+    resolve(res.value[0])
+  }
+  Voice.onSpeechError = reject
+}).finally(() => {
+  Voice.removeAllListeners() // clean up
+})

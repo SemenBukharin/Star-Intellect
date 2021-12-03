@@ -25,7 +25,7 @@ let App = () => {
         <Stack.Screen
           name="First"
           component={First}
-          options={{ headerShown: true}}
+          options={{ headerShown: false}}
         />
         <Stack.Screen
           name="Second"
