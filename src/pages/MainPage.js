@@ -44,7 +44,7 @@ const Main = ({navigation}) => {  //Создаем переменную кото
           <View style={{ width: "90%", alignItems: 'center', justifyContent: 'center'}}>
             <MyButton h="80%" w="60%" srcImg={play} func ={() => {
               TrackPlayer.stop()
-                navigation.navigate('First')
+                navigation.navigate('Titles')
                 
             }}></MyButton>
           </View>

@@ -4,6 +4,7 @@ import Load from './src/pages/LoadScene';
 import First from './src/pages/FirstScene';
 import Second from './src/pages/SecondScene';
 import Third from './src/pages/ThirdScene';
+import Titles from './src/pages/TitlesScene';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
@@ -35,6 +36,11 @@ let App = () => {
         <Stack.Screen
           name="Third"
           component={Third}
+          options={{ headerShown: false}}
+        />
+        <Stack.Screen
+          name="Titles"
+          component={Titles}
           options={{ headerShown: false}}
         />
       </Stack.Navigator>
